@@ -2,7 +2,7 @@
 param location string = 'uksouth'
 
 resource mystorageaccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name:'bicepcreatedstorage'
+  name:'biceplearnstorage'
   location: location
   kind:'StorageV2'
   sku: {
@@ -19,4 +19,7 @@ resource container 'Microsoft.Storage/storageAccounts/blobServices/containers@20
   properties:{
     publicAccess:'Blob'
   }
+  dependsOn:[
+    mystorageaccount
+  ]
 }
