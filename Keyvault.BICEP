@@ -1,3 +1,7 @@
+/*
+To deploy this Bicep file, use the command below:
+az deployment group create --resource-group <resource-group-name> --template-file Keyvault.BICEP --parameters @keyvault.bicepparam
+*/
 @description('The name of the Azure Key Vault')
 param keyVaultName string
 
